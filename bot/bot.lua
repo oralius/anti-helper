@@ -162,28 +162,27 @@ function create_config( )
     "core",
     "plugins"
     },
-    sudo_users = {157059515},--Sudo users
+    sudo_users = {108363478},--Sudo users
     admins = {},
     disabled_channels = {},
     moderation = {data = ''..BeyondTeam..'/data/moderation.json'},
-    info_text = [[*》Beyond Helper Bot V1.5*
-`》An helper bot of` *BDReborn* `based on` *BDMessenger*
+    info_text = [[*》anti Helper Bot V1.5*
+`》An helper bot of` *anti* `based on` *botMessenger*
 
-》[Beyond Helper](https://github.com/BeyondTeam/BDHelper)
+》[Helper](https://github.com/oralius/anti-helper
 
 *》Admins :*
-*》Founder & Developer :* [SoLiD](Telegram.Me/SoLiD)
-_》Developer :_ [ToOfan](Telegram.Me/ToOfan)
-_》Developer & Sponser :_ [MAKAN](Telegram.Me/MAKAN)
+*》silas
+_》@oralius
+_》
 
 *》Special thanks to :*
-》[Amir Bagheri](Telegram.Me/CodeLua)
 
 *》Our channel :*
-》[BeyondTeam](Telegram.Me/BeyondTeam)
+》
 
 *》Our Site :*
-》[BeyondTeam](BeyondTeam.ir)
+》
 ]],
   }
   serialize_to_file(config, './data/config.lua')
