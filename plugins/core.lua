@@ -1,4 +1,4 @@
---Begin Core.lua By #BeyondTeam
+--Begin Core.lua By #oraliusTeam
 local function getindex(t,id) 
 	for i,v in pairs(t) do 
 		if v == id then 
@@ -49,25 +49,25 @@ local lang = redis:get(hash)
 			{text = '> More ', callback_data = '/more:'..GP_id}
 		},
 		{
-			{text = '> About Us ', callback_data = '/beyond:'..GP_id}
+			{text = '> About Us ', callback_data = '/oralius:'..GP_id}
 		},
 		{
 			{text= '> Back' ,callback_data = '/lang:'..GP_id}
 		}				
 	}
   elseif lang then
-	 text = '_به تنظیمات کلی خوشآمدید_'
+	 text = '_به تنظیمات گروه خوشآمدید_'
 	keyboard = {} 
 	keyboard.inline_keyboard = {
 		{
-			{text = "> تنظیمات", callback_data="/settings:"..GP_id},
-			{text = "> لیست بیصدا", callback_data="/mutelist:"..GP_id}
+			{text = "> قفل های اصلی", callback_data="/settings:"..GP_id},
+			{text = "> قفل رسانه ها", callback_data="/mutelist:"..GP_id}
 		},
 		{
 			{text = '> قابلیت های بیشتر ', callback_data = '/more:'..GP_id}
 		},
 		{
-			{text = '> درباره ما ', callback_data = '/beyond:'..GP_id}
+			{text = '> درباره ما ', callback_data = '/oralius:'..GP_id}
 		},
 		{
 			{text= '> بازگشت' ,callback_data = '/lang:'..GP_id}
@@ -118,7 +118,7 @@ local settings = data[tostring(GP_id)]["settings"]
 	keyboard = {} 
 	keyboard.inline_keyboard = {
 		{
-			{text = '> حداکثر پیام های مکرر ', callback_data = 'oralius'}
+			{text = '> حداکثر پیام های رگباری ', callback_data = 'oralius'}
 		},
 		{
 			{text = "➕", callback_data='/floodup:'..GP_id}, 
@@ -134,7 +134,7 @@ local settings = data[tostring(GP_id)]["settings"]
 			{text = "➖", callback_data='/chardown:'..GP_id}
 		},
 		{
-			{text = '> زمان بررسی پیام های مکرر ', callback_data = 'oralius'}
+			{text = '> زمان بررسی پیام های رگباری ', callback_data = 'oralius'}
 		},
 		{
 			{text = "➕", callback_data='/floodtimeup:'..GP_id}, 
@@ -298,7 +298,7 @@ local lang = redis:get(hash)
 			{text = lock_link, callback_data="/locklink:"..GP_id}
 		},
 		{
-			{text = "> قفل تگ", callback_data='oralius'}, 
+			{text = "> قفل ایدی", callback_data='oralius'}, 
 			{text = lock_tag, callback_data="/locktags:"..GP_id}
 		},
 		{
@@ -306,11 +306,11 @@ local lang = redis:get(hash)
 			{text = lock_join, callback_data="/lockjoin:"..GP_id}
 		},
 		{
-			{text = "> قفل پیام های مکرر", callback_data='oralius'}, 
+			{text = "> قفل پیام رگباری", callback_data='oralius'}, 
 			{text = lock_flood, callback_data="/lockflood:"..GP_id}
 		},
 		{
-			{text = "> قفل هرزنامه", callback_data='oralius'}, 
+			{text = "> قفل اسپم", callback_data='oralius'}, 
 			{text = lock_spam, callback_data="/lockspam:"..GP_id}
 		},
 		{
@@ -513,71 +513,71 @@ local lang = redis:get(hash)
 		}				
 	}
    elseif lang then
-	 text = '_به لیست بیصدای گروه خوش آمدید_'
+	 text = '_به لیست رسانه های گروه خوش آمدید_'
 	keyboard = {} 
 	keyboard.inline_keyboard = {
 		{
-			{text = "> بیصدا همه", callback_data='oralius'}, 
+			{text = "> قفل همه", callback_data='oralius'}, 
 			{text = mute_all, callback_data="/muteall:"..GP_id}
 		},
 		{
-			{text = "> بیصدا تصاویر متحرک", callback_data='oralius'}, 
+			{text = "> قفل گیف", callback_data='oralius'}, 
 			{text = mute_gif, callback_data="/mutegif:"..GP_id}
 		},
 		{
-			{text = "> بیصدا متن", callback_data='oralius'}, 
+			{text = "> قفل متن", callback_data='oralius'}, 
 			{text = mute_text, callback_data="/mutetext:"..GP_id}
 		},
 		{
-			{text = "> بیصدا اینلاین", callback_data='oralius'}, 
+			{text = "> قفل بنر", callback_data='oralius'}, 
 			{text = mute_inline, callback_data="/muteinline:"..GP_id}
 		},
 		{
-			{text = "> بیصدا بازی", callback_data='oralius'}, 
+			{text = "> قفل بازی", callback_data='oralius'}, 
 			{text = mute_game, callback_data="/mutegame:"..GP_id}
 		},
 		{
-			{text = "> بیصدا عکس", callback_data='oralius'}, 
+			{text = "> قفل عکس", callback_data='oralius'}, 
 			{text = mute_photo, callback_data="/mutephoto:"..GP_id}
 		},
 		{
-			{text = "> بیصدا فیلم", callback_data='oralius'}, 
+			{text = "> قفل فیلم", callback_data='oralius'}, 
 			{text = mute_video, callback_data="/mutevideo:"..GP_id}
 		},
 		{
-			{text = "> بیصدا آهنگ", callback_data='oralius'}, 
+			{text = "> قفل اهنگ", callback_data='oralius'}, 
 			{text = mute_audio, callback_data="/muteaudio:"..GP_id}
 		},
 		{
-			{text = "> بیصدا صدا", callback_data='oralius'}, 
+			{text = "> قفل وویس", callback_data='oralius'}, 
 			{text = mute_voice, callback_data="/mutevoice:"..GP_id}
 		},
 		{
-			{text = "> بیصدا استیکر", callback_data='oralius'}, 
+			{text = "> قفل استیکر", callback_data='oralius'}, 
 			{text = mute_sticker, callback_data="/mutesticker:"..GP_id}
 		},
 		{
-			{text = "> بیصدا مخاطب", callback_data='oralius'}, 
+			{text = "> قفل مخاطب", callback_data='oralius'}, 
 			{text = mute_contact, callback_data="/mutecontact:"..GP_id}
 		},
 		{
-			{text = "> بیصدا نقل و قول", callback_data='oralius'}, 
+			{text = "> قفل فوروارد", callback_data='oralius'}, 
 			{text = mutes.mute_forward, callback_data="/muteforward:"..GP_id}
 		},
 		{
-			{text = "> بیصدا موقعیت", callback_data='oralius'}, 
+			{text = "> قفل موقعیت", callback_data='oralius'}, 
 			{text = mute_location, callback_data="/mutelocation:"..GP_id}
 		},
 		{
-			{text = "> بیصدا فایل", callback_data='oralius'}, 
+			{text = "> قفل فایل", callback_data='oralius'}, 
 			{text = mute_document, callback_data="/mutedocument:"..GP_id}
 		},
 		{
-			{text = "> بیصدا خدمات تلگرام", callback_data='oralius'}, 
+			{text = "> قفل خدمات تلگرام", callback_data='oralius'}, 
 			{text = mute_tgservice, callback_data="/mutetgservice:"..GP_id}
 		},
 		{
-			{text = "> بیصدا کیبورد", callback_data='oralius'}, 
+			{text = "> قفل کیبورد", callback_data='oralius'}, 
 			{text = mute_keyboard, callback_data="/mutekeyboard:"..GP_id}
 		},
 		{
@@ -654,10 +654,10 @@ if msg.query and msg.query:match("-%d+") and is_sudo(msg) then
 	keyboard = {}
 	keyboard.inline_keyboard = {
 		{
-			{text = ' Go To Group Option ', callback_data = '/lang:'..chatid}
+			{text = ' برای ورود اینجا را لمس کنید ', callback_data = '/lang:'..chatid}
 		},
 		{
-			{text= 'Exit' ,callback_data = '/exit:'..chatid}
+			{text= 'خروج' ,callback_data = '/exit:'..chatid}
 		}					
 	}
 	send_inline(msg.id,'settings','Group Option','Tap Here','Please select an option.!',keyboard)
@@ -687,7 +687,7 @@ local lang = redis:get(hash)
 			{text = '> فارسی ', callback_data = '/persian:'..matches[2]}
 		},
 		{
-			{text= '> Exit' ,callback_data = '/exit:'..matches[2]}
+			{text= '> خروج' ,callback_data = '/exit:'..matches[2]}
 		}				
 	}
     edit_inline(msg.message_id, text, keyboard)
@@ -838,7 +838,7 @@ if matches[1] == '/locktags' then
    if not lang then
 			text = 'Tags Has Been Locked'
    elseif lang then
-			text = 'قفل تگ فعال شد'
+			text = 'قفل ایدی فعال شد'
     end
             data[tostring(matches[2])]["settings"]["lock_tag"] = "yes"
 			save_data(_config.moderation.data, data)
@@ -846,7 +846,7 @@ if matches[1] == '/locktags' then
    if not lang then
 			text = 'Tags Has Been Unlocked'
    elseif lang then
-			text = 'قفل تگ غیر فعال شد'
+			text = 'قفل ایدی غیر فعال شد'
     end
 			data[tostring(matches[2])]["settings"]["lock_tag"] = "no"
 			save_data(_config.moderation.data, data)
@@ -898,7 +898,7 @@ if matches[1] == '/lockflood' then
    if not lang then
 			text = 'Flood Has Been Locked'
    elseif lang then
-			text = 'قفل پیام های مکرر فعال شد'
+			text = 'قفل پیام های رگباری فعال شد'
     end
             data[tostring(matches[2])]["settings"]["flood"] = "yes"
 			save_data(_config.moderation.data, data)
@@ -906,7 +906,7 @@ if matches[1] == '/lockflood' then
    if not lang then
 			text = 'Flood Has Been Unlocked'
    elseif lang then
-			text = 'قفل پیام های مکرر غیر فعال شد'
+			text = 'قفل پیام های رگباری غیر فعال شد'
     end
 			data[tostring(matches[2])]["settings"]["flood"] = "no"
 			save_data(_config.moderation.data, data)
@@ -928,7 +928,7 @@ if matches[1] == '/lockspam' then
    if not lang then
 			text = 'Spam Has Been Locked'
    elseif lang then
-			text = 'قفل هرزنامه فعال شد'
+			text = 'قفل اسپم فعال شد'
     end
             data[tostring(matches[2])]["settings"]["lock_spam"] = "yes"
 			save_data(_config.moderation.data, data)
@@ -936,7 +936,7 @@ if matches[1] == '/lockspam' then
    if not lang then
 			text = 'Spam Has Been Unlocked'
    elseif lang then
-			text = 'قفل هرزنامه غیر فعال شد'
+			text = 'قفل اسپم غیر فعال شد'
     end
 			data[tostring(matches[2])]["settings"]["lock_spam"] = "no"
 			save_data(_config.moderation.data, data)
@@ -1176,7 +1176,7 @@ if matches[1] == '/floodup' then
    if not lang then
 			text = "Flood Sensitivity Has Been Set To : "..flood_max
    elseif lang then
-			text = "حساسیت پیام های مکرر تنظیم شد به : "..flood_max
+			text = "حساسیت پیام های رگباری تنظیم شد به : "..flood_max
     end
 			get_alert(msg.cb_id, text)
 		end 
@@ -1204,7 +1204,7 @@ if matches[1] == '/flooddown' then
    if not lang then
 			text = "Flood Sensitivity Has Been Set To : "..flood_max
    elseif lang then
-			text = "حساسیت پیام های مکرر تنظیم شد به : "..flood_max
+			text = "حساسیت پیام های رگباری تنظیم شد به : "..flood_max
     end
 			get_alert(msg.cb_id, text)
 		end 
@@ -1288,7 +1288,7 @@ if matches[1] == '/floodtimeup' then
    if not lang then
 			text = "Flood Check Time Has Been Set To : "..check_time
    elseif lang then
-			text = "زمان بررسی پیام های مکرر تنظیم شد به : "..check_time
+			text = "زمان بررسی پیام های رگباری تنظیم شد به : "..check_time
     end
 			get_alert(msg.cb_id, text)
 		end 
@@ -1316,7 +1316,7 @@ if matches[1] == '/floodtimedown' then
    if not lang then
 			text = "Flood Check Time Has Been Set To : "..check_time
    elseif lang then
-			text = "زمان بررسی پیام های مکرر تنظیم شد به : "..check_time
+			text = "زمان بررسی پیام های رگباری تنظیم شد به : "..check_time
     end
 			get_alert(msg.cb_id, text)
 		end 
@@ -1339,7 +1339,7 @@ if matches[1] == '/muteall' then
     if not lang then
 			text = 'All Has Been Muted'
     elseif lang then
-        text = 'بیصدا کردن همه فعال شد'
+        text = 'خاموش کردن کل گپ فعال شد'
     end
             data[tostring(matches[2])]["mutes"]["mute_all"] = "yes"
 			save_data(_config.moderation.data, data)
@@ -1347,7 +1347,7 @@ if matches[1] == '/muteall' then
     if not lang then
 			text = 'All Has Been Unmuted'
     elseif lang then
-        text = 'بیصدا کردن همه غیر فعال شد'
+        text = 'خاموش کردن همه غیر فعال شد'
     end
 			data[tostring(matches[2])]["mutes"]["mute_all"] = "no"
 			save_data(_config.moderation.data, data)
@@ -1369,7 +1369,7 @@ if matches[1] == '/mutegif' then
     if not lang then
 			text = 'Gifs Has Been Muted'
     elseif lang then
-        text = 'بیصدا کردن تصاویر متحرک فعال شد'
+        text = 'قفل کردن گیف فعال شد'
     end
             data[tostring(matches[2])]["mutes"]["mute_gif"] = "yes"
 			save_data(_config.moderation.data, data)
@@ -1377,7 +1377,7 @@ if matches[1] == '/mutegif' then
     if not lang then
 			text = 'Gifs Has Been Unmuted'
     elseif lang then
-        text = 'بیصدا کردن تصاویر متحرک غیر فعال شد'
+        text = 'قفل کردن گیف غیر فعال شد'
     end
 			data[tostring(matches[2])]["mutes"]["mute_gif"] = "no"
 			save_data(_config.moderation.data, data)
@@ -1399,7 +1399,7 @@ if matches[1] == '/mutetext' then
     if not lang then
 			text = 'Text Has Been Muted'
     elseif lang then
-        text = 'بیصدا کردن متن فعال شد'
+        text = 'قفل کردن متن فعال شد'
     end
             data[tostring(matches[2])]["mutes"]["mute_text"] = "yes"
 			save_data(_config.moderation.data, data)
@@ -1407,7 +1407,7 @@ if matches[1] == '/mutetext' then
     if not lang then
 			text = 'Text Has Been Unmuted'
     elseif lang then
-        text = 'بیصدا کردن متن غیر فعال شد'
+        text = 'قفل کردن متن غیر فعال شد'
     end
 			data[tostring(matches[2])]["mutes"]["mute_text"] = "no"
 			save_data(_config.moderation.data, data)
@@ -1429,7 +1429,7 @@ if matches[1] == '/muteinline' then
     if not lang then
 			text = 'Inline Has Been Muted'
     elseif lang then
-        text = 'بیصدا کردن اینلاین فعال شد'
+        text = 'قفل کردن اینلاین فعال شد'
     end
             data[tostring(matches[2])]["mutes"]["mute_inline"] = "yes"
 			save_data(_config.moderation.data, data)
@@ -1437,7 +1437,7 @@ if matches[1] == '/muteinline' then
     if not lang then
 			text = 'Inline Has Been Unmuted'
     elseif lang then
-        text = 'بیصدا کردن اینلاین غیر فعال شد'
+        text = 'قفل کردن اینلاین غیر فعال شد'
     end
 			data[tostring(matches[2])]["mutes"]["mute_inline"] = "no"
 			save_data(_config.moderation.data, data)
@@ -1459,7 +1459,7 @@ if matches[1] == '/mutegame' then
     if not lang then
 			text = 'Game Has Been Muted'
     elseif lang then
-        text = 'بیصدا کردن بازی فعال شد'
+        text = 'قفل کردن بازی فعال شد'
     end
             data[tostring(matches[2])]["mutes"]["mute_game"] = "yes"
 			save_data(_config.moderation.data, data)
@@ -1467,7 +1467,7 @@ if matches[1] == '/mutegame' then
     if not lang then
 			text = 'Game Has Been Unmuted'
     elseif lang then
-        text = 'بیصدا کردن بازی غیر فعال شد'
+        text = 'قفل کردن بازی غیر فعال شد'
     end
 			data[tostring(matches[2])]["mutes"]["mute_game"] = "no"
 			save_data(_config.moderation.data, data)
@@ -1489,7 +1489,7 @@ if matches[1] == '/mutephoto' then
     if not lang then
 			text = 'Photo Has Been Muted'
     elseif lang then
-        text = 'بیصدا کردن عکس فعال شد'
+        text = 'قفل کردن عکس فعال شد'
     end
             data[tostring(matches[2])]["mutes"]["mute_photo"] = "yes"
 			save_data(_config.moderation.data, data)
@@ -1497,7 +1497,7 @@ if matches[1] == '/mutephoto' then
     if not lang then
 			text = 'Photo Has Been Unmuted'
     elseif lang then
-        text = 'بیصدا کردن عکس غیر فعال شد'
+        text = 'قفل کردن عکس غیر فعال شد'
     end
 			data[tostring(matches[2])]["mutes"]["mute_photo"] = "no"
 			save_data(_config.moderation.data, data)
@@ -1519,7 +1519,7 @@ if matches[1] == '/mutevideo' then
     if not lang then
 			text = 'Video Has Been Muted'
     elseif lang then
-        text = 'بیصدا کردن فیلم فعال شد'
+        text = 'قفل کردن فیلم فعال شد'
     end
             data[tostring(matches[2])]["mutes"]["mute_video"] = "yes"
 			save_data(_config.moderation.data, data)
@@ -1527,7 +1527,7 @@ if matches[1] == '/mutevideo' then
     if not lang then
 			text = 'Video Has Been Unmuted'
     elseif lang then
-        text = 'بیصدا کردن فیلم غیر فعال شد'
+        text = 'قفل کردن فیلم غیر فعال شد'
     end
 			data[tostring(matches[2])]["mutes"]["mute_video"] = "no"
 			save_data(_config.moderation.data, data)
@@ -1549,7 +1549,7 @@ if matches[1] == '/muteaudio' then
     if not lang then
 			text = 'Audio Has Been Muted'
     elseif lang then
-        text = 'بیصدا کردن آهنگ فعال شد'
+        text = 'قفل کردن آهنگ فعال شد'
     end
             data[tostring(matches[2])]["mutes"]["mute_audio"] = "yes"
 			save_data(_config.moderation.data, data)
@@ -1557,7 +1557,7 @@ if matches[1] == '/muteaudio' then
     if not lang then
 			text = 'Audio Has Been Unmuted'
     elseif lang then
-        text = 'بیصدا کردن آهنگ غیر فعال شد'
+        text = 'قفل کردن آهنگ غیر فعال شد'
     end
 			data[tostring(matches[2])]["mutes"]["mute_audio"] = "no"
 			save_data(_config.moderation.data, data)
@@ -1579,7 +1579,7 @@ if matches[1] == '/mutevoice' then
     if not lang then
 			text = 'Voice Has Been Muted'
     elseif lang then
-        text = 'بیصدا کردن صدا فعال شد'
+        text = 'قفل کردن صدا فعال شد'
     end
             data[tostring(matches[2])]["mutes"]["mute_voice"] = "yes"
 			save_data(_config.moderation.data, data)
@@ -1587,7 +1587,7 @@ if matches[1] == '/mutevoice' then
     if not lang then
 			text = 'Voice Has Been Unmuted'
     elseif lang then
-        text = 'بیصدا کردن صدا غیر فعال شد'
+        text = 'قفل کردن صدا غیر فعال شد'
     end
 			data[tostring(matches[2])]["mutes"]["mute_voice"] = "no"
 			save_data(_config.moderation.data, data)
@@ -1609,7 +1609,7 @@ if matches[1] == '/mutesticker' then
     if not lang then
 			text = 'Sticker Has Been Muted'
     elseif lang then
-        text = 'بیصدا کردن استیکر فعال شد'
+        text = 'قفل کردن استیکر فعال شد'
     end
             data[tostring(matches[2])]["mutes"]["mute_sticker"] = "yes"
 			save_data(_config.moderation.data, data)
@@ -1617,7 +1617,7 @@ if matches[1] == '/mutesticker' then
     if not lang then
 			text = 'Sticker Has Been Unmuted'
     elseif lang then
-        text = 'بیصدا کردن استیکر غیر فعال شد'
+        text = 'قفل کردن استیکر غیر فعال شد'
     end
 			data[tostring(matches[2])]["mutes"]["mute_sticker"] = "no"
 			save_data(_config.moderation.data, data)
@@ -1639,7 +1639,7 @@ if matches[1] == '/mutecontact' then
     if not lang then
 			text = 'Contact Has Been Muted'
     elseif lang then
-        text = 'بیصدا کردن مخاطب فعال شد'
+        text = 'قفل کردن مخاطب فعال شد'
     end
             data[tostring(matches[2])]["mutes"]["mute_contact"] = "yes"
 			save_data(_config.moderation.data, data)
@@ -1647,7 +1647,7 @@ if matches[1] == '/mutecontact' then
     if not lang then
 			text = 'Contact Has Been Unmuted'
     elseif lang then
-        text = 'بیصدا کردن مخاطب غیر فعال شد'
+        text = 'قفل کردن مخاطب غیر فعال شد'
     end
 			data[tostring(matches[2])]["mutes"]["mute_contact"] = "no"
 			save_data(_config.moderation.data, data)
@@ -1669,7 +1669,7 @@ if matches[1] == '/muteforward' then
     if not lang then
 			text = 'Forward Has Been Muted'
     elseif lang then
-        text = 'بیصدا کردن نقل و قول فعال شد'
+        text = 'قفل کردن فوروارد فعال شد'
     end
             data[tostring(matches[2])]["mutes"]["mute_forward"] = "yes"
 			save_data(_config.moderation.data, data)
@@ -1677,7 +1677,7 @@ if matches[1] == '/muteforward' then
     if not lang then
 			text = 'Forward Has Been Unmuted'
     elseif lang then
-        text = 'بیصدا کردن نقل و قول غیر فعال شد'
+        text = 'قفل کردن فوروارد غیر فعال شد'
     end
 			data[tostring(matches[2])]["mutes"]["mute_forward"] = "no"
 			save_data(_config.moderation.data, data)
@@ -1699,7 +1699,7 @@ if matches[1] == '/mutelocation' then
     if not lang then
 			text = 'Location Has Been Muted'
     elseif lang then
-        text = 'بیصدا کردن موقعیت فعال شد'
+        text = 'قفل کردن موقعیت فعال شد'
     end
             data[tostring(matches[2])]["mutes"]["mute_location"] = "yes"
 			save_data(_config.moderation.data, data)
@@ -1707,7 +1707,7 @@ if matches[1] == '/mutelocation' then
     if not lang then
 			text = 'Location Has Been Unmuted'
     elseif lang then
-        text = 'بیصدا کردن موقعیت غیر فعال شد'
+        text = 'قفل کردن موقعیت غیر فعال شد'
     end
 			data[tostring(matches[2])]["mutes"]["mute_location"] = "no"
 			save_data(_config.moderation.data, data)
@@ -1729,7 +1729,7 @@ if matches[1] == '/mutedocument' then
     if not lang then
 			text = 'Document Has Been Muted'
     elseif lang then
-        text = 'بیصدا کردن فایل فعال شد'
+        text = 'قفل کردن فایل فعال شد'
     end
             data[tostring(matches[2])]["mutes"]["mute_document"] = "yes"
 			save_data(_config.moderation.data, data)
@@ -1737,7 +1737,7 @@ if matches[1] == '/mutedocument' then
     if not lang then
 			text = 'Document Has Been Unmuted'
     elseif lang then
-        text = 'بیصدا کردن فایل غیر فعال شد'
+        text = 'قفل کردن فایل غیر فعال شد'
     end
 			data[tostring(matches[2])]["mutes"]["mute_document"] = "no"
 			save_data(_config.moderation.data, data)
@@ -1759,7 +1759,7 @@ if matches[1] == '/mutetgservice' then
     if not lang then
 			text = 'TgService Has Been Muted'
     elseif lang then
-        text = 'بیصدا کردن خدمات تلگرام فعال شد'
+        text = 'قفل کردن خدمات تلگرام فعال شد'
     end
             data[tostring(matches[2])]["mutes"]["mute_tgservice"] = "yes"
 			save_data(_config.moderation.data, data)
@@ -1767,7 +1767,7 @@ if matches[1] == '/mutetgservice' then
     if not lang then
 			text = 'TgService Has Been Unmuted'
     elseif lang then
-        text = 'بیصدا کردن خدمات تلگرام غیر فعال شد'
+        text = 'قفل کردن خدمات تلگرام غیر فعال شد'
     end
 			data[tostring(matches[2])]["mutes"]["mute_tgservice"] = "no"
 			save_data(_config.moderation.data, data)
@@ -1789,7 +1789,7 @@ if matches[1] == '/mutekeyboard' then
     if not lang then
 			text = 'Keyboard Has Been Muted'
     elseif lang then
-        text = 'بیصدا کردن کیبورد شیشه ای فعال شد'
+        text = 'قفل کردن کیبورد شیشه ای فعال شد'
     end
             data[tostring(matches[2])]["mutes"]["mute_keyboard"] = "yes"
 			save_data(_config.moderation.data, data)
@@ -1797,7 +1797,7 @@ if matches[1] == '/mutekeyboard' then
     if not lang then
 			text = 'Keyboard Has Been uted'
     elseif lang then
-        text = 'بیصدا کردن کیبورد شیشه ای غیر فعال شد'
+        text = 'قفل کردن کیبورد شیشه ای غیر فعال شد'
     end
 			data[tostring(matches[2])]["mutes"]["mute_keyboard"] = "no"
 			save_data(_config.moderation.data, data)
@@ -1867,7 +1867,7 @@ if matches[1] == '/more' then
 				{text = "> نمایش پیام خوشامد", callback_data="/showwlc:"..matches[2]},
 			},
 			{ 
-				{text = "> بازگشت به تنظیمات کلی", callback_data="/option:"..matches[2]}
+				{text = "> بازگشت به تنظیمات گروه", callback_data="/option:"..matches[2]}
 			}
 		}
   end
@@ -2650,14 +2650,14 @@ local keyboard = {}
 end
 end
          -- ####################### About Us ####################### --
-if matches[1] == '/beyond' then
+if matches[1] == '/oralius' then
 	local text = _config.info_text
     if not lang then
 	keyboard = {} 
 	keyboard.inline_keyboard = {
 		{
-			{text = "> SoLiD", callback_data="/solid:"..matches[2]}, 
-			{text = "> ToOfan", callback_data="/toofan:"..matches[2]}
+			{text = "> Silas", callback_data="/ssilas:"..matches[2]}, 
+			{text = "> Farzad", callback_data="/farzad:"..matches[2]}
 		},
 		{
 			{text = '> Our GitHub ', url = 'https://www.github.com/oralius'}
@@ -2670,8 +2670,8 @@ if matches[1] == '/beyond' then
 	keyboard = {} 
 	keyboard.inline_keyboard = {
 		{
-			{text = "> سعید", callback_data="/solid:"..matches[2]}, 
-			{text = "> طوفان", callback_data="/toofan:"..matches[2]}
+			{text = "> سیلاس", callback_data="/silas:"..matches[2]}, 
+			{text = "> فرزاد", callback_data="/farzad:"..matches[2]}
 		},
 		{
 			{text = '> گیت هاب تیم ', url = 'https://www.github.com/oralius'}
@@ -2704,14 +2704,14 @@ _》_*Lua*, *Cli* `and` *Api* _Bots_
 		keyboard = {} 
 		keyboard.inline_keyboard = {
 			{
-				{text = "> Back", callback_data="/beyond:"..matches[2]}
+				{text = "> Back", callback_data="/oralius:"..matches[2]}
 			}
 		}
   elseif lang then
 		keyboard = {} 
 		keyboard.inline_keyboard = {
 			{
-				{text = "> بازگشت", callback_data="/beyond:"..matches[2]}
+				{text = "> بازگشت", callback_data="/oralius:"..matches[2]}
 			}
 		}
   end
@@ -2738,14 +2738,14 @@ _》PvResan :_ [NO](NO)
 		keyboard = {} 
 		keyboard.inline_keyboard = {
 			{
-				{text = "> Back", callback_data="/beyond:"..matches[2]}
+				{text = "> Back", callback_data="/oralius:"..matches[2]}
 			}
 		}
   elseif lang then
 		keyboard = {} 
 		keyboard.inline_keyboard = {
 			{
-				{text = "> بازگشت", callback_data="/beyond:"..matches[2]}
+				{text = "> بازگشت", callback_data="/oralius:"..matches[2]}
 			}
 		}
   end
@@ -2762,7 +2762,7 @@ if matches[1] == '/exit' then
     if not lang then
 		 text = '*Group Option Closed*'
    elseif lang then
-		 text = '_تنظیمات کلی بسته شده_'
+		 text = '_تنظیمات گروه بسته شده_'
    end
 		edit_inline(msg.message_id, text)
 	end
@@ -2821,7 +2821,7 @@ return {
 		"^###cb:(/mutekeyboard):(.*)$",
 		"^###cb:(/mutecontact):(.*)$",
 		"^###cb:(/muteforward):(.*)$",
-		"^###cb:(/toofan):(.*)$",
+		"^###cb:(/farzad):(.*)$",
 		"^###cb:(/setflood):(.*)$",
 		"^###cb:(/floodup):(.*)$",
 		"^###cb:(/flooddown):(.*)$",
@@ -2836,14 +2836,14 @@ return {
 		"^###cb:(/modlist):(.*)$",
 		"^###cb:(/cleanmods):(.*)$",
 		"^###cb:(/bans):(.*)$",
-		"^###cb:(/beyond):(.*)$",
+		"^###cb:(/oralius):(.*)$",
 		"^###cb:(/cleanbans):(.*)$",
 		"^###cb:(/filterlist):(.*)$",
 		"^###cb:(/cleanfilterlist):(.*)$",
 		"^###cb:(/whitelist):(.*)$",
 		"^###cb:(/cleanwhitelist):(.*)$",
 		"^###cb:(/silentlist):(.*)$",
-		"^###cb:(/solid):(.*)$",
+		"^###cb:(/silas):(.*)$",
 		"^###cb:(/cleansilentlist):(.*)$",
 		"^###cb:(/link):(.*)$",
 		"^###cb:(/rules):(.*)$",
