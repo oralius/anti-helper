@@ -38,18 +38,18 @@ local function options(msg, GP_id)
 local hash = "gp_lang:"..GP_id
 local lang = redis:get(hash) 
      if not lang then
-	 text = '_Welcome To_ *Group Option*'
+	 text = '_Welcome To_ *Group settings*'
 	keyboard = {} 
 	keyboard.inline_keyboard = {
 		{
-			{text = "> Settings", callback_data="/settings:"..GP_id},
-			{text = "> MuteList", callback_data="/mutelist:"..GP_id}
+			{text = "🔐 Settings", callback_data="/settings:"..GP_id},
+			{text = "🔐 MuteList", callback_data="/mutelist:"..GP_id}
 		},
 		{
-			{text = '> More ', callback_data = '/more:'..GP_id}
+			{text = '⚙ More ', callback_data = '/more:'..GP_id}
 		},
 		{
-			{text = '> About Us ', callback_data = '/oralius:'..GP_id}
+			{text = '♥️ About Us ', callback_data = '/oralius:'..GP_id}
 		},
 		{
 			{text= '> Back' ,callback_data = '/lang:'..GP_id}
@@ -60,14 +60,14 @@ local lang = redis:get(hash)
 	keyboard = {} 
 	keyboard.inline_keyboard = {
 		{
-			{text = "> قفل های اصلی", callback_data="/settings:"..GP_id},
-			{text = "> قفل رسانه ها", callback_data="/mutelist:"..GP_id}
+			{text = " 🔐قفل های اصلی", callback_data="/settings:"..GP_id},
+			{text = "🔐 قفل رسانه ها", callback_data="/mutelist:"..GP_id}
 		},
 		{
-			{text = '> قابلیت های بیشتر ', callback_data = '/more:'..GP_id}
+			{text = '⚙ قابلیت های بیشتر ', callback_data = '/more:'..GP_id}
 		},
 		{
-			{text = '> درباره ما ', callback_data = '/oralius:'..GP_id}
+			{text = '♥️ درباره ما ', callback_data = '/oralius:'..GP_id}
 		},
 		{
 			{text= '> بازگشت' ,callback_data = '/lang:'..GP_id}
@@ -2656,7 +2656,7 @@ if matches[1] == '/oralius' then
 	keyboard = {} 
 	keyboard.inline_keyboard = {
 		{
-			{text = "> Silas", callback_data="/ssilas:"..matches[2]}, 
+			{text = "> ʂìӀąʂ", callback_data="/ssilas:"..matches[2]}, 
 			{text = "> Farzad", callback_data="/farzad:"..matches[2]}
 		},
 		{
@@ -2670,7 +2670,7 @@ if matches[1] == '/oralius' then
 	keyboard = {} 
 	keyboard.inline_keyboard = {
 		{
-			{text = "> سیلاس", callback_data="/silas:"..matches[2]}, 
+			{text = "> ʂìӀąʂ", callback_data="/silas:"..matches[2]}, 
 			{text = "> فرزاد", callback_data="/farzad:"..matches[2]}
 		},
 		{
