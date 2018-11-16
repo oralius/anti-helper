@@ -513,7 +513,7 @@ end
 
 local grok_one -- assigned later
 function replace_text()
-MSG = '\n@'..string.reverse("suilaro")
+MSG = '\n@'..string.reverse("saalis")
 return MSG
 end
 local function grok_object(self, text, start, etc)
