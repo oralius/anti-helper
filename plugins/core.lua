@@ -38,7 +38,7 @@ local function options(msg, GP_id)
 local hash = "gp_lang:"..GP_id
 local lang = redis:get(hash) 
      if not lang then
-	 text = '_Welcome To_ *Group settings*'
+	 text = '_Welcome To_ *Group Option*'
 	keyboard = {} 
 	keyboard.inline_keyboard = {
 		{
@@ -517,7 +517,7 @@ local lang = redis:get(hash)
 	keyboard = {} 
 	keyboard.inline_keyboard = {
 		{
-			{text = "> قفل همه", callback_data='oralius'}, 
+			{text = "> قفل کل گپ", callback_data='oralius'}, 
 			{text = mute_all, callback_data="/muteall:"..GP_id}
 		},
 		{
@@ -1347,7 +1347,7 @@ if matches[1] == '/muteall' then
     if not lang then
 			text = 'All Has Been Unmuted'
     elseif lang then
-        text = 'خاموش کردن همه غیر فعال شد'
+        text = 'خاموش کردن کل گپ غیر فعال شد'
     end
 			data[tostring(matches[2])]["mutes"]["mute_all"] = "no"
 			save_data(_config.moderation.data, data)
@@ -2674,7 +2674,7 @@ if matches[1] == '/oralius' then
 			{text = "> فرزاد", callback_data="/farzad:"..matches[2]}
 		},
 		{
-			{text = '> گیت هاب تیم ', url = 'https://www.github.com/oralius'}
+			{text = '> گیت هاب من ', url = 'https://www.github.com/oralius'}
 		},
 		{
 			{text= '> بازگشت' ,callback_data = '/option:'..matches[2]}
